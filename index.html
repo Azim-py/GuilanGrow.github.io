@@ -1,141 +1,0 @@
-<!DOCTYPE html>
-<html lang="fa">
-  <head>
-    <meta charset="UTF-8" />
-    <title>GreenGuilan</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="images/lofoTab.png" type="image/jpg" />
-  </head>
-  <body>
-    <header>
-      <div class="header-top">
-        <div class="site-info">
-          <img src="images/logo.jpg" alt="لوگو" class="logo" />
-          <div>
-            <h1>GreenGuilan</h1>
-            <p>گیاهان سبز، از دل طبیعت گیلان</p>
-          </div>
-        </div>
-
-        <div class="search-area">
-          <input type="text" id="searchInput" placeholder="search ..." />
-          <button id="toggleTheme">🌓</button>
-        </div>
-      </div>
-
-      <nav class="navbar">
-        <!-- <a href="#about">درباره ما</a> -->
-        <a class="active">خرید گیاه</a>
-        <a href="IntroductionOfPlants.html">معرفی گیاهان</a>
-        <a href="ZistBiologyPlant.html">زیست شناسی گیاهی</a>
-      </nav>
-    </header>
-
-    <!-- <section class="page-title">
-      <h2>صفحه خرید محصول</h2>
-    </section> -->
-
-    <section id="plants" class="plant-grid">
-      <div class="plant">
-        <a href="product.html">
-          <img src="images/Picture00.png" alt="آلوئه ورا" />
-        </a>
-        <h3>آلوئه ورا</h3>
-        <p>قیمت: 120,000 تومان</p>
-      </div>
-
-      <div class="plant">
-        <a href="product.html">
-          <img src="images/Picture00.png" alt="آلوئه ورا" />
-        </a>
-        <h3>آلوئه ورا</h3>
-        <p>قیمت: 120,000 تومان</p>
-      </div>
-
-      <div class="plant">
-        <a href="product.html">
-          <img src="images/Picture00.png" alt="آلوئه ورا" />
-        </a>
-        <h3>آلوئه ورا</h3>
-        <p>قیمت: 120,000 تومان</p>
-      </div>
-
-      <div class="plant">
-        <a href="product.html">
-          <img src="images/Picture00.png" alt="آلوئه ورا" />
-        </a>
-        <h3>آلوئه ورا</h3>
-        <p>قیمت: 120,000 تومان</p>
-      </div>
-
-      <div class="plant">
-        <a href="product.html">
-          <img src="images/Picture00.png" alt="آلوئه ورا" />
-        </a>
-        <h3>آلوئه ورا</h3>
-        <p>قیمت: 120,000 تومان</p>
-      </div>
-
-      <!-- گیاه‌های بیشتر... -->
-    </section>
-
-    <section id="about">
-      <h2>درباره ما</h2>
-      <p>
-        سایت GreenGuilan با هدف معرفی و فروش گیاهان دارویی و زینتی دانشگاه گیلان
-        راه‌اندازی شده است.
-      </p>
-    </section>
-
-    <section id="contact">
-      <h2>خرید و ارتباط</h2>
-      <p>
-        برای سفارش یا مشاوره، لطفاً به آیدی زیر در تلگرام یا واتساپ پیام دهید:
-      </p>
-      <p style="direction: ltr"><strong>@GreenGuilan</strong></p>
-    </section>
-
-    <footer>
-      <p>© 2025 GreenGuilan | با عشق از دل طبیعت گیلان</p>
-    </footer>
-
-    <script>
-      // گرفتن عناصر از صفحه
-      const searchInput = document.getElementById("searchInput");
-      const plantList = document.getElementsByClassName("plant");
-      const toggleTheme = document.getElementById("toggleTheme");
-
-      // بررسی حالت ذخیره‌شده در localStorage و اعمال آن
-      const savedTheme = localStorage.getItem("theme");
-      if (savedTheme === "dark") {
-        document.body.classList.add("dark");
-      }
-
-      // جستجوی گیاهان بر اساس ورودی کاربر
-      searchInput.addEventListener("keyup", function () {
-        const filter = searchInput.value.toLowerCase();
-        for (let i = 0; i < plantList.length; i++) {
-          const plantName = plantList[i].textContent.toLowerCase();
-          plantList[i].style.display = plantName.includes(filter)
-            ? "block"
-            : "none";
-        }
-      });
-
-      // تغییر حالت شب/روز و ذخیره در localStorage
-      toggleTheme.addEventListener("click", () => {
-        document.body.classList.toggle("dark");
-
-        // ذخیره حالت جدید
-        const currentTheme = document.body.classList.contains("dark")
-          ? "dark"
-          : "light";
-        localStorage.setItem("theme", currentTheme);
-
-        // افکت چرخش دکمه
-        toggleTheme.classList.add("clicked");
-        setTimeout(() => toggleTheme.classList.remove("clicked"), 300);
-      });
-    </script>
-  </body>
-</html>
