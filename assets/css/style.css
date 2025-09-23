@@ -1,3 +1,4 @@
+/* 🌐 تنظیمات پایه */
 body {
   font-family: 'vazir', sans-serif;
   background-color: #f5f5f5;
@@ -12,6 +13,7 @@ body.dark {
   color: #eee;
 }
 
+/* 🔝 هدر و جستجو */
 header {
   background-color: #4CAF50;
   color: white;
@@ -36,7 +38,7 @@ header {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  margin-top: 10px
+  margin-top: 10px;
 }
 
 .search-area {
@@ -66,15 +68,16 @@ header {
   transition: transform 0.3s ease;
 }
 
+#toggleTheme.clicked {
+  transform: rotate(180deg);
+}
+
 body.dark #toggleTheme {
   background-color: #333;
   color: #f5f5f5;
 }
 
-#toggleTheme.clicked {
-  transform: rotate(180deg);
-}
-
+/* 🧭 نوار ناوبری */
 .navbar {
   direction: rtl;
   display: flex;
@@ -83,20 +86,32 @@ body.dark #toggleTheme {
   height: 50px;
 }
 
-nav a {
-  display: inline-block;
-  color: white;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 0 10px;
+.navbar a.active {
+  background-color: #f5f5f5;
+  color: black;
+  pointer-events: none;
 }
 
+body.dark .navbar a.active {
+  background-color: #222;
+  color: #eee;
+}
+
+.navbar a:hover {
+  background-color: #377f39;
+}
+
+body.dark nav a {
+  color: #eee;
+}
+
+/* 🏷️ عنوان صفحه */
 .page-title {
   text-align: center;
   margin: 20px 0;
 }
 
+/* 🛒 محصولات */
 .products-grid {
   display: flex;
   flex-wrap: wrap;
@@ -128,12 +143,118 @@ body.dark .product {
   transition: 0.6s;
 }
 
-section {
+.product img:hover {
+  transform: scale(0.9);
+  transition: 0.6s;
+}
+
+/* ❌ غیرفعال‌سازی محصولات و لینک‌ها */
+.products-grid .p2,
+.products-grid .p3,
+.products-grid .p4,
+.products-grid .p5,
+.products-grid .p6,
+.products-grid .p7,
+.products-grid .p8,
+.products-grid .p9 {
+  pointer-events: none;
+  background-color: gray;
+  filter: grayscale(100%);
+}
+
+.navbar .n2,
+.navbar .n3,
+.navbar .n4 {
+  pointer-events: none;
+  color: rgb(82, 81, 81);
+}
+
+/* 📄 مقاله و پاراگراف‌ها */
+.para {
+  font-size: 20px;
+  line-height: 2.5;
+}
+
+.para,
+article h2 {
+  padding: 0 10px;
+  font-family: 'Lucida Sans', sans-serif;
+  text-align: justify;
+}
+
+.box-para {
+  box-shadow: 0 0 10px gray;
+  padding: 20px;
+  margin: 30px 0;
+  border-radius: 20px;
+}
+
+article {
+  margin: 30px;
+}
+
+/* 📦 معرفی محصول */
+.container {
+  position: relative;
+  padding: 10px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  border-left: none;
+  border-right: none;
+  margin: 10px;
+}
+
+.picture-product img {
+  width: auto;
+  height: 50vw;
+  border-radius: 20px;
+  box-shadow: 0 0 5px gray;
+}
+
+.box-introduction {
+  position: sticky;
+  top: 10px;
+  width: 30vw;
+  height: 70%;
+  border-radius: 20px;
+  box-shadow: 0 0 10px gray;
+  color: black;
+  line-height: 1.8;
+  padding: 0 20px;
+  padding-bottom: 20px;
+}
+
+.box-introduction h3 {
+  color: rgb(200, 0, 0);
+}
+
+body.dark .box-introduction {
+  color: #eee;
+}
+
+.box-buy {
+  position:absolute;
+  margin: 0 5px;
+  padding: 0 10px;
+  width: 150px;
+  height: auto;
+  box-shadow: 0 0 10px gray;
+  background-color: rgb(0, 148, 148);
+  right: 520px;
+  bottom: 14px;
+}
+
+/* درباره ما و خرید و ارتباط */
+#contact , #about {
   margin: 30px 0;
   text-align: center;
   padding: 0 20px;
 }
 
+/* 📥 فوتر */
 footer {
   background-color: #ddd;
   text-align: center;
@@ -145,59 +266,76 @@ body.dark footer {
   background-color: #444;
 }
 
-.navbar a:hover {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #2f7632;
-  width: auto;
-  height: 50px;
-  border: none;
+
+/* 📱 ریسپانسیو: دسکتاپ بزرگ */
+@media (min-width: 700px) {
+  .navbar a {
+    display: inline-block;
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0 10px;
+  }
+
+  .navbar a.active {
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5;
+    color: black;
+    pointer-events: none;
+    font-weight: bold;
+    width: auto;
+    height: 50px;
+  }
+
+  .navbar a:hover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2f7632;
+    width: auto;
+    height: 50px;
+    border: none;
+  }
 }
 
-body.dark nav a {
-  color: #eee;
-}
+/* 📱 ریسپانسیو: موبایل و عرض کم */
+@media (max-width: 700px) {
+  .para {
+    font-size: clamp(16px , 2vw , 18px);
+    line-height: 1.8;
+  }
 
-.navbar a.active {
-  display: flex;
-  align-items: center;
-  background-color: #f5f5f5;
-  color: black;
-  pointer-events: none;
-  font-weight: bold;
-  width: auto;
-  height: 50px;
-}
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
 
-body.dark .navbar a.active {
-  background-color: #222;
-  color: #eee;
-}
-
-.product img:hover {
-  transform: scale(0.9);
-  transition: 0.6s;
-}
-
-.products-grid  
-.p2 ,
-.p3 ,
-.p4 ,
-.p5 ,
-.p6 {
-  pointer-events: none;
-  background-color: gray;
-  filter: grayscale(100%);
-}
-
-/* ریسپانسیو */
-@media (max-width: 786px) {
-
-  .navbar a{
-    font-size: clamp(0.7rem, 2vw, 1rem);
+  .navbar a {
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    box-shadow: 0 0 5px white;
+    background-color: #4CAF50;
+    margin-bottom: 10px;
     white-space: normal;
     word-break: normal;
+    font-family: 'Lucida Sans', sans-serif;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .navbar a.active {
+    background-color: #f5f5f5;
+    color: black;
+    pointer-events: none;
+  }
+
+  .navbar a:hover {
+    background-color: #377f39;
   }
 
   .product {
@@ -218,5 +356,23 @@ body.dark .navbar a.active {
   .site-info {
     width: 100%;
     justify-content: flex-start;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    flex-wrap: wrap;
+  }
+
+  .picture-product img {
+    height: 70vw;
+  }
+
+  .box-introduction {
+    width: 60vw;
+    height: auto;
+    margin: 20px;
+    line-height: 2.5;
   }
 }
