@@ -78,6 +78,15 @@ body.dark #toggleTheme {
 }
 
 /* 🧭 نوار ناوبری */
+
+.menu-desktop {
+    display: block;
+  }
+
+.menu-mobile {
+    display: none;
+  }
+
 .navbar {
   direction: rtl;
   display: flex;
@@ -169,6 +178,12 @@ body.dark .product {
   color: rgb(82, 81, 81);
 }
 
+.navbar .box-menu .n2 ,
+.navbar .box-menu .n3 ,
+.navbar .box-menu .n4 {
+  background-color: gray;
+}
+
 /* 📄 مقاله و پاراگراف‌ها */
 .para {
   font-size: 20px;
@@ -194,8 +209,12 @@ article {
 }
 
 /* 📦 معرفی محصول */
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
 .container {
-  position: relative;
   padding: 10px;
   display: flex;
   gap: 20px;
@@ -204,12 +223,15 @@ article {
   border-bottom: 1px solid gray;
   border-left: none;
   border-right: none;
-  margin: 10px;
+}
+
+.picture-product {
+  display: flex;
+  justify-content: center;
 }
 
 .picture-product img {
-  width: auto;
-  height: 50vw;
+  height: 35rem;
   border-radius: 20px;
   box-shadow: 0 0 5px gray;
 }
@@ -236,16 +258,15 @@ body.dark .box-introduction {
 }
 
 .box-buy {
-  position:absolute;
-  margin: 0 5px;
+  color: #f5f5f5;
+  margin-top: 10px;
   padding: 0 10px;
-  width: 150px;
-  height: auto;
+  height: 110px;
+  border-radius: 20px;
   box-shadow: 0 0 10px gray;
   background-color: rgb(0, 148, 148);
-  right: 520px;
-  bottom: 14px;
 }
+
 
 /* درباره ما و خرید و ارتباط */
 #contact , #about {
@@ -269,6 +290,7 @@ body.dark footer {
 
 /* 📱 ریسپانسیو: دسکتاپ بزرگ */
 @media (min-width: 700px) {
+  
   .navbar a {
     display: inline-block;
     color: white;
@@ -290,7 +312,7 @@ body.dark footer {
   }
 
   .navbar a:hover {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     background-color: #2f7632;
@@ -305,6 +327,14 @@ body.dark footer {
   .para {
     font-size: clamp(16px , 2vw , 18px);
     line-height: 1.8;
+  }
+
+  .menu-desktop {
+    display: none;
+  }
+
+  .menu-mobile {
+    display: block;
   }
 
   .navbar {
@@ -366,13 +396,68 @@ body.dark footer {
   }
 
   .picture-product img {
-    height: 70vw;
+    height: 90vw;
   }
 
   .box-introduction {
-    width: 60vw;
+    width: 380px;
     height: auto;
     margin: 20px;
+    font-size: large;
     line-height: 2.5;
+  }
+
+  /* ظاهر کلی dropdown */
+  .dropdown .box-menu{
+    padding-left: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* دکمه شبیه select */
+  .dropdown button {
+    background-color: #4CAF50;
+    color: #eee;
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: bold;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 90vw;
+    text-align: center;
+    border-radius: 10px;
+  }
+
+  /* منو کشویی مخفی در حالت عادی */
+  .dropdown .menu {
+    display: none;
+    margin: 10px;
+    width: 400px;
+  }
+
+  /* لینک‌های داخل منو */
+  .dropdown .menu a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #333;
+    background-color: rgb(126, 255, 133);
+    border-radius: 10px;
+  }
+
+  body.dark .dropdown .menu a:hover {
+    background-color: #333;
+    color: #f5f5f5;
+  }
+
+  .dropdown .menu a:hover {
+    background-color: #eee;
+  }
+
+  /* فعال‌سازی با هاور */
+  .dropdown:hover .menu {
+    display: block;
   }
 }
