@@ -95,13 +95,13 @@ body.dark #toggleTheme {
   height: 50px;
 }
 
-.navbar a.active {
+.navbar a.no-active {
   background-color: #f5f5f5;
   color: black;
   pointer-events: none;
 }
 
-body.dark .navbar a.active {
+body.dark .navbar a.no-active {
   background-color: #222;
   color: #eee;
 }
@@ -132,7 +132,7 @@ body.dark nav a {
 .product {
   background-color: #d2eed5;
   padding: 15px;
-  width: 300px;
+  width: 25% ;
   border-radius: 8px;
   box-shadow: 0 0 5px rgba(0,0,0,0.1);
   text-align: center;
@@ -237,7 +237,7 @@ article {
 }
 
 .box-introduction {
-  margin: 30px;
+  margin: 10px;
   border-radius: 20px;
   box-shadow: 0 0 10px gray;
   color: black;
@@ -304,7 +304,7 @@ body.dark footer {
     padding: 0 10px;
   }
 
-  .navbar a.active {
+  .navbar a.no-active {
     display: inline-flex;
     align-items: center;
     background-color: #f5f5f5;
@@ -354,7 +354,7 @@ body.dark footer {
     font-weight: bold;
   }
 
-  .navbar a.active {
+  .navbar a.no-active {
     background-color: #f5f5f5;
     color: black;
     pointer-events: none;
@@ -365,7 +365,7 @@ body.dark footer {
   }
 
   .product {
-    width: 90%;
+    width: 35%;
   }
 
   .header-top {
