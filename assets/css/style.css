@@ -198,6 +198,10 @@ article h2 {
   margin-bottom: 20px;
 }
 
+.list li::marker {
+  color: #00ff00;
+}
+
 .box-para {
   box-shadow: 0 0 10px gray;
   padding: 20px;
@@ -248,7 +252,7 @@ article {
 }
 
 .box-introduction h3 {
-  color: rgb(200, 0, 0);
+  color: rgb(0, 255, 0);
 }
 
 body.dark .box-introduction {
