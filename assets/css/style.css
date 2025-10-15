@@ -140,12 +140,16 @@ body.dark nav a {
   transition: background-color 0.3s ease;
 }
 
+.price {
+  color: rgb(0, 255, 0);
+}
+
 body.dark .product {
   background-color: #333;
 }
 
 .product img {
-  width: 100%;
+  width: 60%;
   height: auto;
   border-radius: 8px;
   cursor: pointer;
@@ -155,14 +159,54 @@ body.dark .product {
 
 
 /* ❌ غیرفعال‌سازی محصولات و لینک‌ها */
+/* صفحه اصلی */
+/* .products-grid .p1, */
 .products-grid .p2,
 .products-grid .p3,
-.products-grid .p4,
+/* .products-grid .p4, */
 .products-grid .p5,
-.products-grid .p6,
-.products-grid .p7,
-.products-grid .p8,
-.products-grid .p9 {
+.products-grid .p6
+{
+  pointer-events: none;
+  background-color: gray;
+  filter: grayscale(100%);
+}
+
+/* صفحه روغن ها */
+/* .products-grid .oil1, */
+.products-grid .oil2,
+.products-grid .oil3,
+/* .products-grid .oil4, */
+/* .products-grid .oil5, */
+/* .products-grid .oil6, */
+/* .products-grid .oil7, */
+/* .products-grid .oil8, */
+/* .products-grid .oil9, */
+/* .products-grid .oil10, */
+/* .products-grid .oil11, */
+/* .products-grid .oil12, */
+/* .products-grid .oil13, */
+/* .products-grid .oil14, */
+.products-grid .oil15,
+/* .products-grid .oil16, */
+.products-grid .oil00
+{
+  pointer-events: none;
+  background-color: gray;
+  filter: grayscale(100%);
+}
+
+/* صفحه گیاهان زینتی */
+/* .products-grid .plant1, */
+.products-grid .plant2,
+.products-grid .plant3,
+.products-grid .plant4,
+.products-grid .plant5,
+.products-grid .plant6,
+.products-grid .plant7,
+.products-grid .plant8,
+.products-grid .plant9
+{
   pointer-events: none;
   background-color: gray;
   filter: grayscale(100%);
@@ -269,6 +313,19 @@ body.dark .box-introduction {
   background-color: #3f8f42;
 }
 
+.box-buy-desktop2 {
+  position: fixed;
+  bottom: 0;
+  color: #f5f5f5;
+  /* margin-top: 10px; */
+  padding: 0 10px;
+  height: 80px;
+  /* border-radius: 20px; */
+  /* box-shadow: 0 0 10px gray; */
+  /* width: 40%; */
+  background-color: #3f8f42;
+}
+
 .box-buy-mobile {
   position: fixed;
   bottom: 0;
@@ -356,7 +413,8 @@ body.dark footer {
 
 /* 📱 ریسپانسیو: موبایل و عرض کم */
 @media (max-width: 900px) {
-  .box-buy-desktop {
+  .box-buy-desktop,
+  .box-buy-desktop2 {
     display: none;
   }
 
@@ -398,6 +456,10 @@ body.dark footer {
 
   .product {
     width: 38%;
+  }
+
+  .product img {
+    width: 100%;
   }
 
   .header-top {
